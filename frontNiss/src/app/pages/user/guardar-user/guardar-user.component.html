@@ -1,0 +1,100 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="div-main">
+    <div class="div-login-img">
+        <h2>Capturar nuevo usuario</h2>
+		<hr/>
+        
+        <form [formGroup] = "formGUser" (ngSubmit)="guardarUser()">
+            
+            <div>
+                <label style="font-weight: bold;" for="nombreRol"> Rol para el usuario </label>
+                <br>
+                <select (change)="onChangeRolSelected($event)" id="listRoles" formControlName="rolsel">
+                    <option [value]="rol.idRol"  *ngFor = "let rol of dataRoles;">{{rol.nombreRol}}</option>
+                </select>
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="nombreRol"> nombre de usuario </label>
+                <br>
+                <input style="text-align: center;" id="nombreRol" type="text" formControlName="nombreUser">
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="descRol"> email </label>
+                <br>
+                <input style="text-align: center;"  id="descRol" type="text" formControlName="email">
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="nombreRol"> password </label>
+                <br>
+                <input style="text-align: center;" id="nombreRol" type="text" formControlName="pass">
+            </div>
+        <br>
+        <!--<div>
+            <div class="form-group inner-addon right-addon">
+            <div class="input-group col-6 mx-auto">
+                <input name="password"
+                    [type]="showPassword ? 'text' : 'password'"
+                    class="form-control pwd-control"
+                    id="password-field" placeholder="Password">
+                <div>
+                    <svg cIcon name="cil3d" width="15"  alt="show" 
+                     (click)="showPassword = !showPassword"
+                     [class.hide]="showPassword"></svg>
+
+                     <svg cIcon name="cilVector" width="15"  alt="hide"
+                     (click)="showPassword = !showPassword"
+                     [class.hide]="!showPassword"></svg>
+
+                  <i alt="show" class="far fa-eye eye-show"
+                     (click)="showPassword = !showPassword"
+                     [class.hide]="showPassword">fff</i>
+                  <i alt="hide" class="far fa-eye-slash eye-hide"
+                     (click)="showPassword = !showPassword"
+                     [class.hide]="!showPassword">ddd</i>
+                </div>
+              </div>
+            </div>
+        </div>
+        <br>-->
+        <div>
+            <button style="margin-bottom: 2%;"> guardar </button>
+        </div>
+    
+        </form>
+    </div>
+    
+
+</div>
+    
+<app-footer></app-footer>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium"  color = "#7f5281" type = "ball-fussion" [fullScreen] = "true">
+    <p style="color: white" > atendiendo... </p>
+</ngx-spinner>
+
+<ng-template #myModalInfo let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Éxito</h5>
+      </div>
+      <div class="modal-body">
+        El Usuario ha sido guardado.
+      </div>
+    </div>
+</ng-template>
+
+<ng-template #myModalError let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+      </div>
+      <div class="modal-body">
+        Algo ha salido mal.
+      </div>
+    </div>
+</ng-template>

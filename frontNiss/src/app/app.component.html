@@ -1,0 +1,77 @@
+<router-outlet></router-outlet>
+<!--<app-header></app-header>
+<h1>{{title}}</h1>
+<div class="text-center">
+    <p>Haz click en el boton para lanzar el modal deseado</p>
+    <p><button (click)="mostrarModalInfo()">Modal para informar</button></p>
+    <p><button (click)="mostrarModalConf()">Modal de confirmacion</button></p>
+</div>
+<div>
+    <form [formGroup] = "form" (submit)="send()">
+        <div>
+            <label>nombre del rol</label>
+            <input type="text" formControlName="nombreRol">
+        </div>
+
+        <div>
+            <label>descripcion del rol</label>
+            <input type="text" formControlName="descRol">
+        </div>
+
+        <div>
+            <label>rol activo</label>
+            <input type="text" formControlName="rolActivo">
+        </div>
+
+        <div>
+            <label>rol puede iniciar sesión</label>
+            <input type="text" formControlName="rolSesion">
+        </div>
+
+
+        <div>
+            <button> guardar </button>
+        </div>
+
+    </form>
+
+</div>
+
+<app-footer></app-footer>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium"  color = "#7f5281" type = "ball-fussion" [fullScreen] = "true">
+                <p style="color: white" > atendiendo... </p>
+</ngx-spinner>  
+
+<ng-template #myModalInfo let-modal>
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Éxito</h5>
+      </div>
+      <div class="modal-body">
+        ¡Modal mostrado correctamente!
+      </div>
+    </div>
+  
+  </ng-template>
+  
+  <ng-template #myModalConf let-modal>
+  
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Éxito</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')"> 
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        ¿Quieres confirmar la informacion? (Mira el resultado en consola)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close('No')">No</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Si')">Si</button>
+      </div>
+    </div>
+  
+  </ng-template>-->

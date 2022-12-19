@@ -1,0 +1,77 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="div-main">
+    <div class="div-login-img">
+        <h2>Eliminar un Rol</h2>
+		<hr/>
+        
+        <form [formGroup] = "formGRol" (ngSubmit)="eliminarRol()">
+
+            <div>
+                <label style="font-weight: bold;" for="nombreRol"> Roles Registrados </label>
+                <br>
+                <select (change)="onChangeRolSelected($event)" id="listRoles">
+                    <option [value]="rol.idRol"  *ngFor = "let rol of dataRoles;">{{rol.nombreRol}}</option>
+                </select>
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="nombreRol"> Nombre del rol </label>
+                <br>
+                <input  style="text-align: center;" id="nombreRol" type="text" formControlName="nombreRol">
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="descRol"> Descripción del rol </label>
+                <br>
+                <input  style="text-align: center;"  id="descRol" type="text" formControlName="descRol">
+            </div>
+        <br>
+            <!--<div>
+                <label style="font-weight: bold;" for="act"> activo </label>
+                <br>
+                <select id="act" formControlName="activo">
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+        <br>-->
+           <div>
+            <button style="margin-bottom: 2%;"> Eliminar </button>
+        </div>
+    
+        </form>
+    </div>
+    
+
+</div>
+    
+<app-footer></app-footer>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium"  color = "#7f5281" type = "ball-fussion" [fullScreen] = "true">
+    <p style="color: white" > atendiendo... </p>
+</ngx-spinner>
+
+<ng-template #myModalInfo let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Éxito</h5>
+      </div>
+      <div class="modal-body">
+        El Rol ha sido eliminado.
+      </div>
+    </div>
+</ng-template>
+
+<ng-template #myModalError let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+      </div>
+      <div class="modal-body">
+        Algo ha salido mal.
+      </div>
+    </div>
+</ng-template>

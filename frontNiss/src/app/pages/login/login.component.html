@@ -1,0 +1,59 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="div-main">
+    <div class="div-login-img">
+        <svg cIcon name="cilVector" width="150"  customClasses="icon-style"></svg> 
+        <h2>Inicio de sesión</h2>
+		<hr/>
+        
+        <form [formGroup] = "formLogin" (ngSubmit)="iniciaSesion()">
+            <div>
+                <label style="font-weight: bold;" for="user"> Usuario </label>
+                <br>
+                <input style="text-align: center;" id="user" type="text" formControlName="user">
+            </div>
+        <br>
+            <div>
+                <label style="font-weight: bold;" for="pass"> password </label>
+                <br>
+                <input style="text-align: center;"  id="pass" type="password" formControlName="pass">
+            </div>
+        <br>
+           <div>
+            <button style="margin-bottom: 2%;"> iniciar sesión </button>
+        </div>
+    
+        </form>
+    </div>
+    
+
+</div>
+
+<app-footer></app-footer>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium"  color = "#7f5281" type = "ball-fussion" [fullScreen] = "true">
+    <p style="color: white" > atendiendo... </p>
+</ngx-spinner>
+
+<ng-template #myModalInfo let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Éxito</h5>
+      </div>
+      <div class="modal-body">
+        {{mensajeLogin}}
+      </div>
+    </div>
+</ng-template>
+
+<ng-template #myModalError let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+      </div>
+      <div class="modal-body">
+        {{mensajeModal}}
+      </div>
+    </div>
+</ng-template>

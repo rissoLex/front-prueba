@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="div-main">
+    <div class="div-login-img">
+        <h2>Consulta de roles capturados</h2>
+		<hr/>
+
+        <table>
+            <tr >
+            <td style="background-color: #4F2361; width: 5%; color: #FFFFFF; font-weight: bold;">id rol</td>
+            <td style="background-color: #4F2361; width: 15%; color: #FFFFFF; font-weight: bold;">nombre del rol</td>
+            <td style="background-color: #4F2361; width: 30%; color: #FFFFFF; font-weight: bold;">descripción</td>
+          </tr>
+          <tr *ngFor = "let rol of dataRoles;">
+            <td style="background-color: #a5a2af; width: 5%; border: 1px solid #88868f;">{{ rol.idRol }}</td>
+            <td style="background-color: #a5a2af; width: 15%; border: 1px solid #88868f;">{{ rol.nombreRol }}</td>
+            <td style="background-color: #a5a2af; width: 30%; border: 1px solid #88868f;">{{ rol.descripcionRol }}</td>
+          </tr>
+        </table>	
+
+    </div>
+    
+
+</div>
+    
+<app-footer></app-footer>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium"  color = "#7f5281" type = "ball-fussion" [fullScreen] = "true">
+    <p style="color: white" > atendiendo... </p>
+</ngx-spinner>
+
+<ng-template #myModalError let-modal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+      </div>
+      <div class="modal-body">
+        Algo ha salido mal.
+      </div>
+    </div>
+</ng-template>
